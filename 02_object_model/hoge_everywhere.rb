@@ -6,3 +6,33 @@
 # - Class
 # - Hash
 # - TrueClass
+
+module HogeEverywhere
+  def hoge
+    "hoge"
+  end
+end
+
+class String
+  include HogeEverywhere
+end
+
+class Integer
+  include HogeEverywhere
+end
+
+class Numeric
+  include HogeEverywhere
+end
+
+class Class
+  include HogeEverywhere
+end
+
+class Hash
+  include HogeEverywhere
+end
+
+class TrueClass
+  include HogeEverywhere
+end
