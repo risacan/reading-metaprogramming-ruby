@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     minitest (5.13.0)
+    minitest-emoji (2.0.0)
     rake (13.0.1)
 
 PLATFORMS
@@ -9,6 +10,7 @@ PLATFORMS
 
 DEPENDENCIES
   minitest (~> 5.13)
+  minitest-emoji
   rake (~> 13.0)
 
 BUNDLED WITH
