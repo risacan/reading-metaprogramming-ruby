@@ -10,7 +10,7 @@ class TestDefine < MiniTest::Test
       my_attr_accessor :hoge
     end
   rescue
-  end
+end
 
   def test_answer_a1
     assert_equal "//", A1.new.send("//".to_sym)
