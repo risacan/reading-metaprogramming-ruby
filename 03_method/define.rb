@@ -53,22 +53,20 @@ module OriginalAccessor
 end
 
 module DefineMyAttrAccessor
-  attr_accessor :name
-  def my_attr_accessor(name)
-    @name = name
-    #attr_accessor :"#{name}"
-
-    define_method("#{name}=") do |arg|
-      @name = arg
+  def my_attr_accessor(arg)
+    define_method(arg) do
+      instance_variable_get("@#{arg}")
     end
 
-    define_method(name) do
-      @name
-    end
+    define_method("#{arg}=") do |n|
+      if [true, false].include?(n)
+        puts "✿#{self.class}✿"
+        define_singleton_method("#{arg}?") do
+          !!send(arg)
+        end
+      end
 
-    # わからねぇ...
-    define_method("#{name}?") do
-      @name
+      instance_variable_set("@#{arg}", n)
     end
   end
 end
